@@ -1,0 +1,19 @@
+{
+  "name": "ui-bank-system-server",
+  "version": "1.0.0",
+  "description": "User interface to authenticate, login and register users for a bank system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jhonatan Latorre S",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0"
+  }
+}
