@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #7a838f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+  }
+
+  h1 {
+    align-self: center;
+  }
+  
+  .register-container {
+    background-color: #4A4F58;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 375px;
+    height: 520px;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    background-color: #3C4047;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .input-group label {
+    margin-right: 10px;
+  }
+  
+  .input-group i {
+    color: #B0B0B0;
+    font-size: 16px;
+  }
+  .input-group input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .register-button {
+    background-color: #2ba361;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-button:hover {
+    background-color: #35C476;
+  }
+
+  .cancel-button {
+    background-color: #b92f2f;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ca2424;
+  }
+
+  a {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+    /* Media Queries */
+@media (max-width: 768px) {
+    .login-container {
+      width: 90%;
+      padding: 15px;
+    }
+    
+    .input-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .input-group label {
+      margin-bottom: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-container {
+      width: 100%;
+      padding: 10px;
+      border-radius: 0;
+    }
+  
+    .login-form {
+      gap: 10px;
+    }
+  
+    .login-button {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .cancel-button {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+  }
