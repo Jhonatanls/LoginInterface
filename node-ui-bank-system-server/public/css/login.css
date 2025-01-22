@@ -90,8 +90,9 @@ body {
     color: #fff;
     text-align: center;
     text-decoration: none;
-    padding: 25px;
+    padding: 10px;
   }
+
   a:hover {
     text-decoration: underline;
   }

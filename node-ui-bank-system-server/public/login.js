@@ -1,11 +1,12 @@
-var usernameInput = document.getElementById('username');
-var passwordInput = document.getElementById('password');
-document.getElementsByClassName('login-form')[0].addEventListener('submit', function (event) {
+"use strict";
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+document.getElementsByClassName('login-form')[0].addEventListener('submit', (event) => {
     event.preventDefault();
-    var username = usernameInput.value;
-    var password = passwordInput.value;
-    var errorMessages = document.querySelectorAll('.error-message');
-    errorMessages.forEach(function (element) {
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach((element) => {
         element.classList.add('hidden');
     }); // Hide all error messages
     if (username.trim() === '') {
@@ -17,7 +18,8 @@ document.getElementsByClassName('login-form')[0].addEventListener('submit', func
         return;
     }
 });
-var showErrorMessage = function (inputElement) {
-    var errorMessage = inputElement.nextElementSibling;
+const showErrorMessage = (inputElement) => {
+    const errorMessage = inputElement.nextElementSibling;
     errorMessage.classList.remove('hidden');
 };
+//# sourceMappingURL=login.js.map
