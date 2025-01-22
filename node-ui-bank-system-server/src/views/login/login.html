@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Interface</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
     <script src="https://kit.fontawesome.com/752d4bf545.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -17,18 +17,22 @@
                     <i class="icon-user"></i>
                 <i class="fas fa-user"></i>
                 </label>
-                <input type="text" name="username" placeholder="Ingresa tu usuario" required>
+                <input type="text" id="username" placeholder="Ingresa tu usuario">
+                <p class="error-message hidden">El usuario es requerido</p>
             </div>
             <div class="input-group">
                 <label for="password">
                     <i class="fas fa-lock"></i>
                 </label>
-                <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                <input type="password" id="password" placeholder="Ingresa tu contraseña">
+                <p class="error-message hidden">La contraseña es requerida</p>
             </div>
             <input class="login-button"  type="submit" value="Iniciar Sesión">
             <input class="cancel-button" type="button" value="Cancelar">
+
+            <a href="../register/register.html">Si no tienes una cuenta, regístrate</a>
         </form>
     </div>
-
+    <script src="login.js"></script>
 </body>
 </html>
