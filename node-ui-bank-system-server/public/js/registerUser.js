@@ -1,30 +1,67 @@
 "use strict";
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
-const form = document.getElementsByClassName('login-form')[0];
-const formErrorsContainer = document.getElementById("form-errors");
-const formErrorsText = formErrorsContainer.querySelector("p");
-
+const confirmPasswordInput = document.getElementById('confirm-password');
+const form = document.getElementsByClassName('register-form')[0];
+const formErrorsContainer = document.getElementById('form-errors');
+const formErrorsText = formErrorsContainer.querySelector('p');
 
 form.addEventListener('submit', (event) => {
-    
+    const name = nameInput.value;
+    const email = emailInput.value;
     const username = usernameInput.value;
     const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
     let errors = false;
 
     // Limpiar mensajes de error previos
-    clearErrors();    
+    clearErrors();
+
+    if (name.trim() === '') {
+        event.preventDefault();
+        showFormError("El nombre es requerido.");
+        errors = true;
+    } else if(!validateName(name)) {
+        event.preventDefault();
+        showFormError("El nombre no es válido.");
+        errors = true;
+    }
+
+    if (email.trim() === '') {
+        event.preventDefault();
+        showFormError("El correo es requerido.");
+        errors = true;
+    }else if(!validateEmail(email)) {
+        event.preventDefault();
+        showFormError("El correo no es válido.");
+        errors = true;
+    }
 
     if (username.trim() === '') {
-        errors = true;
         event.preventDefault();
         showFormError("El usuario es requerido.");
-    }
-    if (password.trim() === '') {
         errors = true;
+    }   
+
+    if (password.trim() === '') {
         event.preventDefault();
         showFormError("La contraseña es requerida.");
+        errors = true;
     }
+    
+    if (confirmPassword.trim() === '') {
+        event.preventDefault();
+        showFormError("La confirmación de contraseña es requerida.");
+        errors = true;
+
+    } else if (password !== confirmPassword) { 
+        event.preventDefault();
+        showFormError("Las contraseñas no coinciden.");
+        errors = true;
+    }
+
     // Mostrar el spinner si no hay errores
     if (!errors) {
         event.preventDefault(); // Detener temporalmente el envío del formulario
@@ -35,6 +72,7 @@ form.addEventListener('submit', (event) => {
             form.submit(); // Enviar el formulario después de mostrar el spinner
         }, 500);
     }
+
 });
 
 // Función para mostrar el spinner
@@ -74,12 +112,14 @@ function closeError() {
     errorContainer.classList.add('hidden');
 }
 
-const cancelButton = document.querySelector('.cancel-button');
-        cancelButton.addEventListener('click', () => {
-            window.location.href = '/register';
-        });
+// Validación de correo electrónico
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+function validateName(name) {
+    const nameRegex = /^[A-Za-z]+$/;
+    return nameRegex.test(name);
+}
 
-
-
-
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=register.js.map

@@ -1,13 +1,13 @@
 import axios from 'axios';
 import e, { Request, Response } from 'express';
-import path from 'path';
 
 const login = (req: Request, res: Response ) => {
     const apiURL = process.env.API_URL + 'auth/login';
 
     // Validate request body
     if (!req.body || Object.keys(req.body).length === 0) {
-        return res.status(400).send({ error: 'Request body is missing or empty' });
+        return res.status(400).render( 'login', { 
+            error: 'Request body is missing or empty', });
     }
 
     // Send request to API
@@ -46,7 +46,7 @@ const login = (req: Request, res: Response ) => {
         } else {
             // Manejo de errores sin respuesta del servidor
             console.log("Error sin respuesta del servidor" , error.message);
-            return res.status(500).render("500", {
+            return res.status(500).render('login', {
                 error: "Ocurrió un error interno. Por favor, intenta más tarde.",
             });
         }});
