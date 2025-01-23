@@ -9,19 +9,19 @@ const registerRouter = require('./src/routes/register.router');
 dotenv.config();
 const app = express();
 
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Routes
 app.use(mainRouter);
-app.use('/register', registerRouter);
+app.use('/auth', registerRouter);
 app.use('/auth', authRouter);
 
 // EJS configuration
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Server configuration
 const PORT = process.env.PORT || 3000;

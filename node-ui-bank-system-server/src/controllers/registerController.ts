@@ -6,9 +6,8 @@ const index = (req: Request, res: Response ) => {
 }
 
 const register = (req: Request, res: Response ) => {
-    const apiURL = process.env.API_URL + '/auth/register';
-    const data = req.body.data;
-    console.log(data);
+    const apiURL = process.env.API_URL + 'auth/register';
+    console.log(req.body);
     res.send('Registro exitoso');
     //axios.post(apiURL, req.body)
     //.then(response => {
