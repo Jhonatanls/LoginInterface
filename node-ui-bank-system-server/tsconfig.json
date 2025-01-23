@@ -1,6 +1,6 @@
 {
   "exclude": ["node_modules", "dist", "src/**/*.test.ts"],
-  "include": ["src/**/*", "public/login.ts", "public/register.ts", "public/login.js", "public/register.ts", "public/login.js", "public/login.ts"],
+  "include": ["src/**/*", "public/login.ts", "public/register.ts", "public/js/login.js", "public/register.ts", "public/js/login.js", "public/login.ts"],
   "compilerOptions": {
     "types": ["node", "jest", "express"],
     "target": "ESNext",
