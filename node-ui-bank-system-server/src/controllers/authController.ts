@@ -20,7 +20,9 @@ const login = (req: Request, res: Response ) => {
             data:{
                 username: req.body.username,
                 password: req.body.password,
-                token: response.data.token
+                token: response.data.token,
+                name: response.data.name,
+                email: response.data.email,
         }});
     })
     .catch(error => {

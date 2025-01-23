@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de usuario</title>
+    <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="/css/profile.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        h2 {
+            margin: 0.5em 0;
+        }
+
+        p {
+            margin: 0.3em 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Perfil</h1>
-    <p>Bienvenido, <%= data.username %> </p>
+    <h2>Bienvenido, <%= data.name %></h2>
+    <p>Tu usuario es: <%= data.username %></p>
+    <p>Tu correo es: <%= data.email %></p>
     <a href="/login">Logout</a>
-</body>
+
     <script src="./js/profile.js"></script>
+</body>
+
 </html>
